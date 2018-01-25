@@ -23,7 +23,6 @@ export const getAll = () =>
     .then(data => data.books);
 
 export const update = (book, shelf) => {
-  console.log('Headers: ', headers);
   return fetch(`${api}/books/${book.id}`, {
     method: 'PUT',
     headers: {
@@ -34,8 +33,8 @@ export const update = (book, shelf) => {
   }).then(res => res.json());
 };
 
-export const search = query =>
-  fetch(`${api}/search`, {
+export const search = query => {
+  return fetch(`${api}/search`, {
     method: 'POST',
     headers: {
       ...headers,
@@ -45,3 +44,4 @@ export const search = query =>
   })
     .then(res => res.json())
     .then(data => data.books);
+};

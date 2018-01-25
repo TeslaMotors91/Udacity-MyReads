@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
+import noCoverImage from '../images/cover_unavailable.gif';
+
 class Book extends Component {
   render() {
     const { book, onShelfChange } = this.props;
-    const noThumbLink = 'https://books.google.com/googlebooks/images/no_cover_thumb.gif';
 
     return (
       <div className="book">
@@ -14,7 +15,7 @@ class Book extends Component {
             style={{
               width: 128,
               height: 193,
-              backgroundImage: `url(${book.imageLinks ? book.imageLinks.thumbnail : noThumbLink})`
+              backgroundImage: `url(${book.imageLinks ? book.imageLinks.thumbnail : noCoverImage})`
             }}
           />
           <div className="book-shelf-changer">
@@ -32,7 +33,7 @@ class Book extends Component {
             </select>
           </div>
         </div>
-        <div className="book-title">{book.title ? book.title : null}</div>
+        <div className="book-title">{book.title ? book.title : ''}</div>
         <div className="book-authors">{book.authors ? book.authors.join(', ') : ''}</div>
       </div>
     );
