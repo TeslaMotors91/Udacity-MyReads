@@ -34,6 +34,25 @@ class BookShelf extends Component {
 
     BooksAPI.update(book, shelf);
   };
+  onRatingChange = (book, rating) => {
+    console.log('Rating: ', rating);
+    const id = book.id;
+    const currentBooks = [...this.state.books];
+    const indexToUpdate = currentBooks.findIndex(book => book.id === id);
+    const newBookToUpdate = Object.assign({}, currentBooks[indexToUpdate], {
+      rating: rating
+    });
+
+    this.setState({
+      books: [
+        ...currentBooks.slice(0, indexToUpdate),
+        newBookToUpdate,
+        ...currentBooks.slice(indexToUpdate + 1)
+      ]
+    });
+
+    // BooksAPI.update(book, shelf);
+  };
 
   render() {
     const { books } = this.state;
@@ -83,6 +102,7 @@ class BookShelf extends Component {
                 title={shelf.name}
                 books={shelf.books}
                 onShelfChange={this.onShelfChange}
+                onRatingChange={this.onRatingChange}
               />
             ))}
           </div>
