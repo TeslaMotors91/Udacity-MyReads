@@ -34,6 +34,8 @@ class BookShelf extends Component {
 
     BooksAPI.update(book, shelf);
   };
+
+  // TODO: Make the rating state persistent after user refreshes the page
   onRatingChange = (book, rating) => {
     console.log('Rating: ', rating);
     const id = book.id;
@@ -50,8 +52,6 @@ class BookShelf extends Component {
         ...currentBooks.slice(indexToUpdate + 1)
       ]
     });
-
-    // BooksAPI.update(book, shelf);
   };
 
   render() {
