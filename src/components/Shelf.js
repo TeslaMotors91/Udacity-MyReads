@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Book from './Book';
 import PropTypes from 'prop-types';
 
+// A class to handle each book shelf with their respective state
 class Shelf extends Component {
   render() {
     const { title, books, onShelfChange, onRatingChange } = this.props;

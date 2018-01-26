@@ -4,6 +4,7 @@ import StarRatings from './common/StarRatings';
 
 import noCoverImage from '../images/cover_unavailable.gif';
 
+// A class to handle the book component for ListBooks and SearchBooks
 class Book extends Component {
   constructor(props) {
     super(props);
@@ -22,7 +23,6 @@ class Book extends Component {
 
   render() {
     const { book, onShelfChange, onRatingChange } = this.props;
-    console.log('Books: ', book);
 
     return (
       <div className="book">

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import classNames from 'classnames';
 
+// A class to handle the construction of a star
 class Star extends Component {
   constructor() {
     super();

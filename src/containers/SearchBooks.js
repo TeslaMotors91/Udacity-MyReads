@@ -1,11 +1,10 @@
-// Dependency imports
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 
-// Relative imports
 import * as BooksAPI from '../utils/BooksAPI';
 import Book from '../components/Book';
 
+// A class to handle the Search screen container
 class SearchBooks extends Component {
   state = {
     books: [],

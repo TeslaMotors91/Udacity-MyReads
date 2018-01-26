@@ -3,6 +3,7 @@ import * as BooksAPI from '../utils/BooksAPI';
 
 import Shelf from './Shelf';
 
+// A class to manage the main content of ListBooks
 class BookShelf extends Component {
   state = {
     books: []
@@ -37,7 +38,6 @@ class BookShelf extends Component {
 
   // TODO: Make the rating state persistent after user refreshes the page
   onRatingChange = (book, rating) => {
-    console.log('Rating: ', rating);
     const id = book.id;
     const currentBooks = [...this.state.books];
     const indexToUpdate = currentBooks.findIndex(book => book.id === id);

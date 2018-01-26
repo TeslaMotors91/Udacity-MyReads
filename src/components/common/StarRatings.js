@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 
 import Star from './star';
 
+// A class to create the StarRatings component
 class StarRatings extends Component {
   constructor() {
     super();

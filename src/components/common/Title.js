@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+// A constant to handle the Title of the ListBooks container/screen
 const Title = props => {
   return (
     <div className="list-books-title">
